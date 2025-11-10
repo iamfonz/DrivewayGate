@@ -8,9 +8,9 @@ The gate will be a **sliding cantliver gate** that **opens to the left** (from s
 
 The gate will be installed using **two 4" posts with nylon rollers** to mount and support the gate.
 
-The driveway opening is approximately **187 inches**.
+The driveway opening is approximately **15.5 feet / 187 inches**.
 
-The total length of the gate will be **25 feet**.
+The total length of the gate will be **25 feet** with a height of **4 feet**
 
 ### Frame
 
