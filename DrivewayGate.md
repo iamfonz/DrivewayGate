@@ -4,7 +4,7 @@ After many years of not having a proper driveway gate, it is time to address the
 
 ## Gate Details
 
-The gate will be a **sliding cantliver gate** that **opens to the left** (from street-view looking at the property/gate).
+The gate will be a **sliding cantilever gate** that **opens to the left** (from street-view looking at the property/gate).
 
 The gate will be installed using **two 4" posts with nylon rollers** to mount and support the gate.
 
@@ -20,17 +20,17 @@ The gate frame will be constructed using a variety of round tubing sizes. All me
 
 #### Dimensions Breakdown
 
-- Horizontal Rails:
+- **Horizontal Rails**
   - Length: `300"`
   - Tubing: `2-1/2" O.D.`
-- Verticals
+- **Verticals**
   - Length:
         - Outer: `51"`
         - Inner: `48"`
   - Tubing:  `2" O.D.`
   - Spacing: `50"- On Center`
   - Notes: The ends should have an extra `3"` at the top that will serve as stops against the rollers.
-- Diagonal Braces
+- **Diagonal Braces**
   - Length: `69 5/16"`
   - Tubing: `1-5/8" O.D.`
 
