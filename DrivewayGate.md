@@ -18,13 +18,15 @@ The gate frame will be constructed using a variety of round tubing sizes. All me
 
 ![Gate Frame Drawing](./gate-frame-drawing.png)
 
+#### Dimensions Breakdown
+
 - Horizontal Rails:
-  - Length: `25'`
+  - Length: `300"`
   - Tubing: `2-1/2" O.D.`
 - Verticals
   - Length: Outer: `51"` Inner: `48"`
   - Tubing:  `2" O.D.`
-  - Spacing: `5'- On Center`
+  - Spacing: `60"- On Center`
   - Notes: The ends should have an extra `3"` at the top that will serve was stops against the rollers.
 - Diagonal Braces
   - Length: `76 13/16"`
