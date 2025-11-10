@@ -24,15 +24,17 @@ The gate frame will be constructed using a variety of round tubing sizes. All me
   - Length: `300"`
   - Tubing: `2-1/2" O.D.`
 - Verticals
-  - Length: Outer: `51"` Inner: `48"`
+  - Length:
+        - Outer: `51"`
+        - Inner: `48"`
   - Tubing:  `2" O.D.`
-  - Spacing: `60"- On Center`
-  - Notes: The ends should have an extra `3"` at the top that will serve was stops against the rollers.
+  - Spacing: `50"- On Center`
+  - Notes: The ends should have an extra `3"` at the top that will serve as stops against the rollers.
 - Diagonal Braces
-  - Length: `76 13/16"`
+  - Length: `69 5/16"`
   - Tubing: `1-5/8" O.D.`
 
-Below is an example gate. It is made 4 feet hight for a 15 foot opening.
+Below is an example gate. It is made 4 feet high for a 15 foot opening.
 
 ![Example Gat Picture](./example-gate.jpg)
 
