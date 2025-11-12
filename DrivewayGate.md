@@ -38,6 +38,27 @@ Below is an example gate. It is made 4 feet high for a 15 foot opening.
 
 ![Example Gat Picture](./example-gate.jpg)
 
+#### Gate Weight Calculation
+
+- Horizontal Rails
+  - 600"/25' total length
+  - 5.8 lbs/ft
+  - `5.8 * 25 = 145 lbs`
+- Verticals
+  - 342"/28.5' total length
+  - 3.66 lbs/ft
+  - `3.66 * 28.5 = 104.31 lbs`
+- Diagonals
+  - 415.875"/34.65625' total length
+  - 2.28 lb/ft
+  - `2.28 * 34.65625 = 79.01625 lbs`
+- Chain Link
+  - 25'
+  - 2.87 lb/foot
+  - `2.87 * 25 = 71.75 lbs`
+
+Total Weight: `145 + 104.31 + 79.01625 + 71.75 = 400.07625 lbs`
+
 ## Helpful Links
 
 - [Hoover Fencing - Cantilever Slide Gate System Overview](https://www.hooverfence.com/cantilever-slide-gates-overview)
