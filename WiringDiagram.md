@@ -22,10 +22,10 @@
 ## Wiring Diagram
 
 ```mermaid
-flowchart TB
+flowchart LR
 
 subgraph GateControlBoard [Control Board Terminals]
-    direction 
+
     terminal1["1-L"]
     terminal2["2-N"]
     terminal3["3-U"]
@@ -45,30 +45,51 @@ subgraph GateControlBoard [Control Board Terminals]
 end
 
 subgraph VehicleSensor [Vehicle Sensor Exit Wand]
-    vehRed[Red]
-    vehGreen[Green]
-    vehBlack[Black]
-    vehBlue[Blue]
-    vehYellow[Yellow]
 
-    subgraph rangeAdjustmentBoard [Range Adjustment Board]
-        rangeBoard["board"]
-    end
+    vehRed["Red (11)"]---terminal11
+    vehGreen["Green (13)"]---terminal13
+    vehBlack["Black (15)"]---terminal15
+    vehBlue["Blue (16)"]---terminal16
 
-    vehYellow---rangeBoard
-    vehBlack---rangeBoard
-    
 end
-
-%%vehicle sensor connections%%
-vehRed---terminal11
-vehGreen---terminal13
-vehBlack---terminal15
-vehBlue---terminal16
-
 
 subgraph WireKeypad [Wired Keypad]
-    keypad
+    keypadRed["Red (11)"]---terminal11
+    keypadPurple["Purple (13)"]---terminal13
+    keypadBlack["Black (13)"]---terminal13
+    keypadBlue["Blue (14)"]---terminal14
 end
 
+
+subgraph HomeLink [Homelink Remote Control]
+    homelinkTerminal1["Terminal 1 (13)"]---terminal13
+    homelinkTerminal2["Terminal 2 (14)"]---terminal14
+    homelinkTerminal7["Terminal 7 (11)"]---terminal11
+    homelinkTerminal8["Terminal 8 (13)"]---terminal13
+end
+
+subgraph WarningLight [Warning Light]
+    light1["Wire 1 (6)"]---terminal6
+    light2["Wire 2 (7)"]---terminal7
+end
+
+subgraph InfraredSensor
+    subgraph emitter [Emitter]
+        emitterPositive["~+ (11)"]---terminal11
+        emitterNegative["~- (13)"]---terminal13
+    end
+
+    subgraph receiver [Receiver]
+        receiverPositive["~+ (11)"]---terminal11
+        receiverNegative["~- (13)"]---terminal13
+        receiverNC["NC (12)"]---terminal12
+        receiverCOM["COM (13)"]---terminal13
+    end
+end
+
+
+subgraph WallButton [Wall Push Button]
+    wbWire1["Wire 1 (13)"]---terminal13
+    wbWire2["Wire 2 (14)"]---terminal14
+end
 ```

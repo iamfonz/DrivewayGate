@@ -4,7 +4,7 @@
 
 | Description | Cost |
 | ----------- | ---- |
-| Electrical  | $400 |
+| Electrical | $400 |
 | Metal (Gate Frame + Posts) | $619 |
 | Rollers | $751.05 |
 | Magnetic Lock | $404.63 |
