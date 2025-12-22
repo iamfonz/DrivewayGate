@@ -24,7 +24,7 @@
 ```mermaid
 flowchart LR
 
-subgraph GateControlBoard [Control Board Terminals]
+subgraph GateControlBoard1Thru10 [Control Board Terminals 1-10]
 
     terminal1["1-L"]
     terminal2["2-N"]
@@ -91,5 +91,40 @@ end
 subgraph WallButton [Wall Push Button]
     wbWire1["Wire 1 (13)"]---terminal13
     wbWire2["Wire 2 (14)"]---terminal14
+end
+
+subgraph MagneticLock [Gate Lock]
+
+    subgraph magRelay [Relay]
+
+        relayCoilNC["Relay Coil NC"]---terminal12
+        relayCoilCOM["Relay Coil COM"]---terminal13
+
+        relayContactMagLockPos["24V Contact MagLock +"]
+        relayContactMagLockNeg["24V Contact MagLock -"]
+
+        relayContactPowerPos["24V Power Supply +"]
+        relayContactPowerNeg["24V Power Supply -"]
+    end
+
+    subgraph maglock [MagLock]
+
+        maglock24VPos["Maglock 24V +"]---relayContactMagLockPos
+        maglock24VNeg["Maglock 24V -"]---relayContactMagLockNeg
+
+        magLockRed["Red"]---maglock24VPos
+        magLockWhite["White"]---maglock24VPos
+
+
+        
+        magLockBlack["Black"]---maglock24VNeg
+        magLockGreen["Green"]---maglock24VNeg
+
+    end
+
+    subgraph dcPower [Power Supply]
+        dcPowerPositive["DC Power +"]---relayContactPowerPos
+        dcPowerNegative["DC Power -"]---relayContactPowerNeg
+    end
 end
 ```
