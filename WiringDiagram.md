@@ -33,22 +33,39 @@
 - **Terminal 3** ``
 - **Terminal 4** ``
 - **Terminal 5** ``
-- **Terminal 6** ``
+- **Terminal 6**
   - Warning Light `Wire 1`
-- **Terminal 7** `1`
+- **Terminal 7**
   - Warning Light `Wire 2`
-- **Terminal 8** ``
-- **Terminal 9** ``
-- **Terminal 10** `3`
-- **Terminal 11** `3`
+- **Terminal 8**
+- **Terminal 9**
+- **Terminal 10**
+- **Terminal 11**
   - Wired Keypad `Red`
   - Homelink `Terminal 7`
   - Infrared Sensor Receiver `+`
   - Infrared Sensor Transmitter `+`
-- **Terminal 12** `2`
-- **Terminal 14** `3`
-- **Terminal 15** `2`
-- **Terminal 16** `1`
+- **Terminal 12**
+  - Infrared Sensor Receiver `NC`
+  - MagLock Relay `NC`
+- **Terminal 13**
+  - Wired Keypad `Purple`
+  - Wired Keypad `Black`
+  - Homelink `Terminal 1`
+  - Homelink `Terminal 8`
+  - Infrared Sensor Emitter `~ -`
+  - Infrared Sensor Receiver `~ -`
+  - Infrared Sensor Receiver `COM`
+  - Wall Button `Wire 1`
+  - MagLock Relay `COM`
+- **Terminal 14**
+  - Wired Keypad `Blue`
+  - Homelink `Terminal 2`
+  - Wall Button `Wire 2`
+- **Terminal 15**
+  - Vehicle Sensor `Black`
+- **Terminal 16**
+  - Vehicle Sensor `Blue`
 
 ## Wiring Diagram
 
@@ -64,79 +81,53 @@ subgraph GateControlBoard [Gate Control Board]
     terminal16["Terminal 16"]
 end
 
-subgraph VehicleSensor [Vehicle Sensor Exit Wand]
-    vehRed["Red (24VDC +)"]
-    vehGreen["Green (24VDC -)"]
-    
-    vehBlack["Black (15)"]---terminal15VehicleSensor
-    vehBlue["Blue (16)"]---terminal16VehicleSensor
-
-    terminal15VehicleSensor---terminal15
-    terminal16VehicleSensor---terminal16
-end
-
 subgraph WireKeypad [Wired Keypad]
-    keypadRed["Red (11)"]---terminal11WireKeypad
-    keypadPurple["Purple (13)"]---terminal13WireKeypad
-    keypadBlack["Black (13)"]---terminal13WireKeypad
-    keypadBlue["Blue (14)"]---terminal14WireKeypad
-
-    terminal11WireKeypad---terminal11
-    terminal13WireKeypad---terminal13
-    terminal14WireKeypad---terminal14
-
+    keypadRed["Red (11)"]---terminal11
+    keypadPurple["Purple (13)"]---terminal13
+    keypadBlack["Black (13)"]---terminal13
+    keypadBlue["Blue (14)"]---terminal14
 end
 
 
 subgraph HomeLink [Homelink Remote Control]
-    homelinkTerminal1["Terminal 1 (13)"]---terminal13HomeLink
-    homelinkTerminal2["Terminal 2 (14)"]---terminal14HomeLink
-    homelinkTerminal7["Terminal 7 (11)"]---terminal11HomeLink
-    homelinkTerminal8["Terminal 8 (13)"]---terminal13HomeLink
+    homelinkTerminal1["Terminal 1 (13)"]---terminal13
+    homelinkTerminal2["Terminal 2 (14)"]---terminal14
+    homelinkTerminal7["Terminal 7 (11)"]---terminal11
+    homelinkTerminal8["Terminal 8 (13)"]---terminal13
 
-    terminal11HomeLink---terminal11
-    terminal13HomeLink---terminal13
-    terminal14HomeLink---terminal14
 end
 
 subgraph WarningLight [Warning Light]
-    light1["Wire 1 (6)"]---terminal6WarningLight 
-    light2["Wire 2 (7)"]---terminal7WarningLight
+    light1["Wire 1 (6)"]---terminal6 
+    light2["Wire 2 (7)"]---terminal7
 end
 
 subgraph InfraredSensor
     subgraph emitter [Emitter]
-        emitterPositive["~+ (11)"]---terminal11InfraredSensor
-        emitterNegative["~- (13)"]---terminal13InfraredSensor
+        emitterPositive["~+ (11)"]---terminal11
+        emitterNegative["~- (13)"]---terminal13
     end
 
     subgraph receiver [Receiver]
-        receiverPositive["~+ (11)"]---terminal11InfraredSensor
-        receiverNegative["~- (13)"]---terminal13InfraredSensor
-        receiverNC["NC (12)"]---terminal12InfraredSensor
-        receiverCOM["COM (13)"]---terminal13InfraredSensor
+        receiverPositive["~+ (11)"]---terminal11
+        receiverNegative["~- (13)"]---terminal13
+        receiverNC["NC (12)"]---terminal12
+        receiverCOM["COM (13)"]---terminal13
     end
-
-    terminal11InfraredSensor---terminal11
-    terminal12InfraredSensor---terminal12
-    terminal13InfraredSensor---terminal13
 end
 
 
 subgraph WallButton [Wall Push Button]
-    wbWire1["Wire 1 (13)"]---terminal13WallButton
-    wbWire2["Wire 2 (14)"]---terminal14WallButton
-
-    terminal13WallButton---terminal13
-    terminal14WallButton---terminal14
+    wbWire1["Wire 1 (13)"]---terminal13
+    wbWire2["Wire 2 (14)"]---terminal14
 end
 
 subgraph MagneticLock [Gate Lock]
 
     subgraph magRelay [Relay]
 
-        relayCoilNC["Relay Coil NC"]---terminal12MagneticLock
-        relayCoilCOM["Relay Coil COM"]---terminal13MagneticLock
+        relayCoilNC["Relay Coil NC"]---terminal12
+        relayCoilCOM["Relay Coil COM"]---terminal13
 
         relayContactMagLockPos["24V Contact MagLock +"]
         relayContactMagLockNeg["24V Contact MagLock -"]
@@ -144,9 +135,6 @@ subgraph MagneticLock [Gate Lock]
         relayContactPowerPos["24V Power Supply +"]
         relayContactPowerNeg["24V Power Supply -"]
     end
-
-    terminal12MagneticLock---terminal12
-    terminal13MagneticLock---terminal13
 
     subgraph maglock [MagLock]
 
@@ -159,6 +147,14 @@ subgraph MagneticLock [Gate Lock]
         magLockBlack["Black"]---maglock24VNeg
         magLockGreen["Green"]---maglock24VNeg
     end
+end
+
+
+subgraph VehicleSensor [Vehicle Sensor Exit Wand]
+    vehRed["Red (24VDC +)"]
+    vehGreen["Green (24VDC -)"]
+    vehBlack["Black (15)"]---terminal15
+    vehBlue["Blue (16)"]---terminal16
 end
 
 
