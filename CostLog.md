@@ -12,3 +12,8 @@
 | Intercom | $170.47 |
 | Concrete | TBD |
 | **Total** | $3159.35 |
+
+## Electrical
+
+- 12/30/2025 Amazon Order `$108.15`
+  - All DC connection supplies (DIN Terminal Blocks, relay, DC power supply)
