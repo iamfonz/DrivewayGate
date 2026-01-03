@@ -16,4 +16,6 @@
 ## Electrical
 
 - 12/30/2025 Amazon Order `$108.15`
-  - All DC connection supplies (DIN Terminal Blocks, relay, DC power supply)
+  - DIN Terminal Blocks, relay, DC power supply
+- 1/3/2026 Amazon Order `234.87`
+  - DIN Terminal blocks, AC receptacle, DC power distrubtion block, DIN rails, crimper, 18 AWG colored wire, outdoor boxes
