@@ -126,20 +126,17 @@ subgraph MagneticLock [Gate Lock]
 
     subgraph magRelay [Relay]
 
-        relayCoilNC["Relay Coil NC"]---terminal12
-        relayCoilCOM["Relay Coil COM"]---terminal13
+        relayCoilNC["Relay Coil NC (Terminal 8)"]---terminal12
+        relayCoilCOM["Relay Coil COM (Terminal 7)"]---terminal13
 
-        relayContactMagLockPos["24V Contact MagLock +"]
-        relayContactMagLockNeg["24V Contact MagLock -"]
-
-        relayContactPowerPos["24V Power Supply +"]
-        relayContactPowerNeg["24V Power Supply -"]
+        relayContactMagLockPos["24V Contact MagLock + (NC Terminal 1)"]
+        relayContactPowerPos["24V Power Supply + (COM Terminal 5)"]
     end
 
     subgraph maglock [MagLock]
 
         maglock24VPos["Maglock 24V +"]---relayContactMagLockPos
-        maglock24VNeg["Maglock 24V -"]---relayContactMagLockNeg
+        maglock24VNeg["Maglock 24V -"]
 
         magLockRed["Red"]---maglock24VPos
         magLockWhite["White"]---maglock24VPos
@@ -163,10 +160,10 @@ subgraph dcPower [24VDC Power Supply]
     dcPowerNegative["DC Power -"]
 
     dcPowerPositive---relayContactPowerPos
-    dcPowerNegative---relayContactPowerNeg
-
+    dcPowerNegative---maglock24VNeg
     
     dcPowerPositive---vehRed
     dcPowerNegative---vehGreen
+
 end
 ```
